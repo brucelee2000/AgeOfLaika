@@ -32,6 +32,22 @@ class ViewController: UIViewController {
         humanYearTextField.resignFirstResponder()
         
     }
+    
+    @IBAction func converToRealDogYears(sender: UIButton) {
+        let humanYear = humanYearTextField.text
+        let humanYearToDouble = Double((humanYear as NSString).doubleValue)
+        var calculatedYear:Double
+        
+        if humanYearToDouble > 2 {
+            calculatedYear = 2*10.5+(humanYearToDouble-2)*4
+        } else {
+            calculatedYear = humanYearToDouble*10.5
+        }
+        
+        convertedDogYear.text = "\(Int(calculatedYear))" + " years old in REAL dog year"
+        humanYearTextField.resignFirstResponder()
+    }
+    
 
 }
 
